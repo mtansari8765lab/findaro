@@ -16,7 +16,7 @@
  *
  * The cache name is versioned; old versions are deleted on activate.
  */
-var CACHE_NAME = "findaro-shell-v1";
+var CACHE_NAME = "findaro-shell-v2";
 var SCOPE = self.registration.scope;
 var INDEX_URL = new URL("../index.html", SCOPE).href;
 var ROOT_URL = new URL("../", SCOPE).href;
@@ -51,7 +51,7 @@ var OFFLINE_HTML =
   "<circle cx=\"21\" cy=\"21\" r=\"4\" fill=\"#E8482F\"/></svg>" +
   "<h1>You're offline</h1>" +
   "<p>Findaro can't load this page without a connection. Once the site has loaded at least once, " +
-  "all 16 tools work fully offline — reconnect and try again to pick up where you left off.</p>" +
+  "all 17 tools work fully offline — reconnect and try again to pick up where you left off.</p>" +
   "<a href=\"" + ROOT_URL + "\">Try again</a>" +
   "</div></body></html>";
 
