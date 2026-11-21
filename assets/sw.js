@@ -1,6 +1,6 @@
 "use strict";
 /*
- * Findaro service worker — Phase 3 PWA support.
+ * Dr.Find service worker — Phase 3 PWA support.
  *
  * Caching rules (deliberately conservative):
  *  - App shell and static assets: cache-first, filled from the network on
@@ -38,7 +38,7 @@ var CORE_ASSETS = [
 var OFFLINE_HTML =
   "<!doctype html><html lang=\"en\"><head><meta charset=\"utf-8\" />" +
   "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />" +
-  "<meta name=\"color-scheme\" content=\"light dark\" /><title>You're offline — Findaro</title>" +
+  "<meta name=\"color-scheme\" content=\"light dark\" /><title>You're offline — Dr.Find</title>" +
   "<style>body{margin:0;font-family:system-ui,-apple-system,'Segoe UI',sans-serif;background:#FBF7F1;color:#251334;" +
   "display:flex;min-height:100vh;align-items:center;justify-content:center;padding:24px;box-sizing:border-box}" +
   "@media (prefers-color-scheme: dark){body{background:#150A24;color:#F5EEFC}}" +
@@ -50,7 +50,7 @@ var OFFLINE_HTML =
   "<line x1=\"31.5\" y1=\"31.5\" x2=\"43\" y2=\"43\" stroke=\"#E8482F\" stroke-width=\"6\" stroke-linecap=\"round\"/>" +
   "<circle cx=\"21\" cy=\"21\" r=\"4\" fill=\"#E8482F\"/></svg>" +
   "<h1>You're offline</h1>" +
-  "<p>Findaro can't load this page without a connection. Once the site has loaded at least once, " +
+  "<p>Dr.Find can't load this page without a connection. Once the site has loaded at least once, " +
   "all 17 tools work fully offline — reconnect and try again to pick up where you left off.</p>" +
   "<a href=\"" + ROOT_URL + "\">Try again</a>" +
   "</div></body></html>";
