@@ -256,6 +256,7 @@
       }
       .cat-btn:hover{border-color:var(--line-strong)}
       .cat-btn.on{background:var(--primary);border-color:var(--primary);color:var(--on-primary)}
+      .cat-btn.ai-first{border-color:var(--primary);color:var(--primary)}
       .tool-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(248px,1fr));gap:14px;margin:18px 0 0;padding-bottom:8px}
       .tool-card{
         background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
@@ -439,6 +440,12 @@
       .explore{margin:64px 0 0}
       .explore h2{font-size:clamp(26px,4vw,34px);font-weight:800;letter-spacing:-.015em}
       .explore p.lead{color:var(--muted);margin:8px 0 0;max-width:680px}
+      .ai-quick{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 0;align-items:center}
+      .ai-quick .lbl{font-size:13px;font-weight:700;color:var(--muted);margin-right:2px}
+      .ai-quick a{display:inline-block;background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:8px 15px;font-weight:600;font-size:14px;color:var(--ink-soft)}
+      .ai-quick a:hover{border-color:var(--primary);color:var(--primary);text-decoration:none}
+      .ai-quick a.all{background:var(--primary);border-color:var(--primary);color:var(--on-primary)}
+      .ai-quick a.all:hover{color:var(--on-primary);opacity:.92}
       .explore-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(248px,1fr));gap:14px;margin-top:18px}
       .explore-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:8px;color:var(--ink);text-align:left;width:100%}
       .explore-card:hover{border-color:var(--primary);text-decoration:none}
@@ -511,8 +518,8 @@
         </a>
         <nav aria-label="Main">
           <a href="#search" data-nav="home">Search</a>
-          <a href="#tools" data-nav="tools">Tools</a>
           <a href="#ai-tools" data-nav="ai">AI Tools</a>
+          <a href="#tools" data-nav="tools">Tools</a>
           <a href="#guides" data-nav="guides">Guides</a>
           <a href="#tools" data-nav="favs">Favorites</a>
         </nav>
@@ -575,29 +582,19 @@
         </div>
       </section>
 
-      <section class="wrap" id="tools">
-        <div class="tools-head">
-          <h2>Free online tools</h2>
-          <p>Seventeen small tools that run entirely in your browser. Your text, images and passwords are processed on your device and never uploaded. Star a tool to pin it to your favorites.</p>
-        </div>
-        <div class="tools-controls">
-          <div class="tsearch">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="21" y2="21"/></svg>
-            <input type="search" id="tool-filter" placeholder="Filter tools… e.g. convert, timer, JSON" aria-label="Filter tools" />
-          </div>
-          <div id="cat-btns" role="group" aria-label="Tool categories"></div>
-        </div>
-        <div id="recent-tools-wrap" hidden>
-          <h3 style="font-size:15px;margin:20px 0 0;color:var(--muted)">Recently used</h3>
-          <div class="tool-grid" id="recent-tools"></div>
-        </div>
-        <div class="tool-grid" id="tool-grid"></div>
-        <div class="empty-note" id="tools-empty" hidden>No tools match that filter. Try a different word, or clear the category.</div>
-      </section>
-
-      <section class="wrap explore" id="explore">
-        <h2>Explore AI tools &amp; guides</h2>
+      <section class="wrap explore" id="ai-tools">
+        <h2>AI tools</h2>
         <p class="lead">A curated directory of well-known AI tools — described from published features, with no invented prices and no fake testing — plus practical guides to help you choose and use them well.</p>
+        <div class="ai-quick">
+          <span class="lbl">Start with a well-known tool:</span>
+          <a href="#" data-open-ai-tool="chatgpt">ChatGPT</a>
+          <a href="#" data-open-ai-tool="claude">Claude</a>
+          <a href="#" data-open-ai-tool="gemini">Google Gemini</a>
+          <a href="#" data-open-ai-tool="perplexity">Perplexity</a>
+          <a href="#" data-open-ai-tool="copilot">Microsoft Copilot</a>
+          <a href="#" data-open-ai-tool="midjourney">Midjourney</a>
+          <a href="#" class="all" data-open-ai-dir>Browse all 25 AI tools &rarr;</a>
+        </div>
         <div class="explore-grid">
           <button class="explore-card" type="button" data-open-ai-dir>
             <span class="cat">Directory · 25 tools</span>
@@ -626,6 +623,27 @@
         </div>
         <p style="margin-top:14px;font-size:14.5px;color:var(--muted)">Comparing options? See <a href="#" data-open-compare="writing">best free AI writing tools</a>, <a href="#" data-open-compare="search">AI search engines compared</a>, <a href="#" data-open-compare="students">best AI tools for students</a> and <a href="#" data-open-compare="all">all comparisons →</a></p>
       </section>
+
+      <section class="wrap" id="tools">
+        <div class="tools-head">
+          <h2>Free online tools</h2>
+          <p>Seventeen small tools that run entirely in your browser. Your text, images and passwords are processed on your device and never uploaded. Star a tool to pin it to your favorites.</p>
+        </div>
+        <div class="tools-controls">
+          <div class="tsearch">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="21" y2="21"/></svg>
+            <input type="search" id="tool-filter" placeholder="Filter tools… e.g. convert, timer, JSON" aria-label="Filter tools" />
+          </div>
+          <div id="cat-btns" role="group" aria-label="Tool categories"></div>
+        </div>
+        <div id="recent-tools-wrap" hidden>
+          <h3 style="font-size:15px;margin:20px 0 0;color:var(--muted)">Recently used</h3>
+          <div class="tool-grid" id="recent-tools"></div>
+        </div>
+        <div class="tool-grid" id="tool-grid"></div>
+        <div class="empty-note" id="tools-empty" hidden>No tools match that filter. Try a different word, or clear the category.</div>
+      </section>
+
     </main>
 
     <main id="view-ai" hidden>
@@ -874,6 +892,11 @@
     let activeCat = "All";
     function renderCatBtns(){
       const box = $("#cat-btns"); box.innerHTML = "";
+      const aiBtn = el("button", "cat-btn ai-first", "AI Tools");
+      aiBtn.type = "button";
+      aiBtn.setAttribute("aria-label", "Open the AI Tools Directory");
+      aiBtn.addEventListener("click", () => openAiDirectory());
+      box.appendChild(aiBtn);
       CATEGORIES.forEach(c => {
         const b = el("button", "cat-btn" + (c === activeCat ? " on" : ""), c === "All" ? "All tools" : c);
         b.type = "button";
@@ -3022,8 +3045,9 @@
     }
     // Global wiring for Phase 2 controls
     document.addEventListener("click", (e) => {
-      const t = e.target.closest("[data-open-ai-dir],[data-open-guide],[data-open-compare],[data-go-home],[data-go-ai],[data-go-home-guides],[data-open-tool],[data-open-page]");
+      const t = e.target.closest("[data-open-ai-dir],[data-open-ai-tool],[data-open-guide],[data-open-compare],[data-go-home],[data-go-ai],[data-go-home-guides],[data-open-tool],[data-open-page]");
       if (!t) return;
+      if (t.hasAttribute("data-open-ai-tool") && (t.closest("#guide-body") || t.closest("#compare-body") || t.closest("#ai-detail-body") || t.closest(".info-body"))) return; // already wired by wireInlineLinks
       if (t.hasAttribute("data-open-tool") && (t.closest("#guide-body") || t.closest("#compare-body"))){ e.preventDefault(); openTool(t.getAttribute("data-open-tool")); return; }
       if (t.hasAttribute("data-open-page") && t.closest(".info-body")){ e.preventDefault(); openPage(t.getAttribute("data-open-page")); return; }
       if (t.hasAttribute("data-open-tool") || t.hasAttribute("data-open-page")) return; // static ones already wired
@@ -3033,6 +3057,7 @@
       if (t.closest("#compare-body") || t.closest("#guide-body") || t.closest(".info-body")) return;
       e.preventDefault();
       if (t.hasAttribute("data-open-ai-dir")) openAiDirectory();
+      else if (t.hasAttribute("data-open-ai-tool")) openAiTool(t.getAttribute("data-open-ai-tool"));
       else if (t.hasAttribute("data-open-guide")) openGuide(t.getAttribute("data-open-guide"));
       else if (t.hasAttribute("data-open-compare")){ const k = t.getAttribute("data-open-compare"); if (k === "all") openAiDirectory(); else openCompare(k); }
     });
@@ -3043,7 +3068,7 @@
     $$("[data-nav]").forEach(a => a.addEventListener("click", (e) => {
       const n = a.getAttribute("data-nav");
       if (n === "ai"){ e.preventDefault(); openAiDirectory(); }
-      if (n === "guides"){ e.preventDefault(); showHome(); setTimeout(() => { const s = document.getElementById("explore"); if (s) s.scrollIntoView({behavior:"smooth"}); }, 30); }
+      if (n === "guides"){ e.preventDefault(); showHome(); setTimeout(() => { const s = document.getElementById("ai-tools"); if (s) s.scrollIntoView({behavior:"smooth"}); }, 30); }
     }));
 
     /* ================= Boot: tool of the day + directory ================= */
